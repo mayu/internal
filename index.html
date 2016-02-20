@@ -3,9 +3,9 @@
 	<title>Internal | Mayu Studios</title>
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,700,400italic,700italic,100italic' rel='stylesheet' type='text/css'>
-	
+
 	<style>
-		
+
 		/* Typography */
 
 			body {
@@ -32,18 +32,35 @@
 
 			/* List */
 
-				body > ul > li {
-					font-size: 3vmin;
-					font-weight: 700;
+				body > ul {
+					padding-left: 0;
 				}
 
+				body > ul > li {
+					font-size: 4vmin;
+					font-weight: 700;
+					padding-left: 0;
+					margin-top: 3vmin;
+					text-transform: uppercase
+				}
+
+					body > ul > ul {
+						/*padding-left: 0vmin;*/
+					}
+
 					body > ul > ul > li {
-						font-size: 2.7vmin;
+						font-size: 3.3vmin;
+						font-weight: 400;
+						/*padding-left: 0;*/
 					}
 
 						body > ul > ul > ul > li {
-							font-size: 2.1vmin;
+							font-size: 3vmin;
 						}
+
+							body > ul > ul > ul > ul > li {
+								font-size: 2.1vmin;
+							}
 
 
 		/* Color Scheme */
@@ -60,7 +77,7 @@
 		/* Structure */
 
 			body {
-				max-width: 900px;
+				max-width: 960px;
 				width: 100%;
 				margin: 0 auto;
 				padding: 10vh 2vw 2vh 2vw;;
@@ -75,37 +92,54 @@
 			}
 
 	</style>
+	<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/kefir/3.2.0/kefir.min.js"></script>
+
 </head>
 <body>
 	<h1>Mayu Studios - Rundberg 1</h1>
 	<ul>
-
-		<li>Business Goals</li>
-		<li>Design Values</li>
-		<li>Design Process</li>
-		<li>User Personas</li>
-		<li>Market Analysis</li>
-		<li>Prototypes</li>
-		<li>Humans</li>
-		<li>Safety</li>
-		<li>Sewing</li>
-		<li>Electronics</li>
-		<li>Web Engineering &amp; Design</li>
+		<li>High Level Design</li>
 			<ul>
-				<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">CSS Cheatsheet</a></li>
-				<li><a href="http://github.com/sartaj">GitHub</a></li>
+				<li>Business Goals</li>
+				<li>Design Values</li>
+				<li>Design Process</li>
 			</ul>
-	<!--	<li>Writings <i></i></li>-->
-	<!--		<ul>-->
-	<!--			<li>2009-2010: <a href="http://blogs.dallasobserver.com/author.php?author_id=2272">Text</a> <i>- Description</i></li>-->
-	<!--				<ul>-->
-	<!--					<li><strong>Examples</strong></li>-->
-	<!--					<li><a href="http://blogs.dallasobserver.com/dc9/2011/01/how_to_make_indie_rock.php">Title <i> - Description</a></i></li>-->
-	<!--				</ul>-->
-	<!--		</ul>-->
+		<li>Research</li>
+			<ul>
+				<li>User Personas</li>
+				<li>Market Analysis</li>
+				<li>Component Research</li>
+				<ul>
+					<li>Pressure Sensor Research</li>
+					<li>Force Feedback Research</li>
+					<li>Fabric Research</li>
+				</ul>
+			</ul>
+
+		<li>Supplies</li>
+			<ul>
+				<li>Supplies Needed</li>
+			</ul>
+
+		<li>Humans Resources</li>
+			<ul>
+				<li>Humans Resources</li>
+			</ul>
+
+		<li>Training</li>
+			<ul>
+				<li>Safety</li>
+				<li>Electronic Textiles</li>
+				<li>Web Engineering &amp; Design</li>
+					<ul>
+						<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">CSS Cheatsheet</a></li>
+						<li><a href="http://github.com/sartaj">GitHub</a></li>
+					</ul>
+			</ul>
+
+		<li>Logs</li>
 
 	</ul>
-<!-- 		<li>Music</li> -->
-<!-- 		<li>Teaching</li> -->
 </body>
 </html>
