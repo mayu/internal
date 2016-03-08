@@ -5,227 +5,93 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
 
-	<style>
-
-		/* Typography */
-
-			body {
-				font-size: 3vmin;
-				font-family: 'Oswald', sans-serif;
-			}
-
-			a {
-				text-decoration: none;
-			}
-
-				a:hover {
-					text-decoration: underline;
-				}
-
-			i {
-				font-size: 2.1vmin;
-			}
-
-			h1 span {
-				font-size: 4vmin;
-				font-weight: 300;
-			}
-
-		/* Color Scheme */
-
-			body {
-				color: rgba(0, 0, 0, 0.75);
-			}
-
-			a {
-				color: hsla(206, 92%, 41%, 0.8);
-			}
-
-		/* Structure */
-			body {
-				margin: 0;
-				padding: 0;
-			}
-
-			.Tree {
-				max-width: 960px;
-				width: 100%;
-				/*margin-left: 2vw;*/
-				padding: 2vh 2vw 2vh 2vw;
-				box-sizing: border-box;
-					-webkit-box-sizing: border-box;
-					-moz-box-sizing: border-box;
-			}
-
-			li {
-				padding: 1%;
-				list-style-type: none;
-			}
-			.cover {
-				width: 100vw;
-				height: 100vh;
-			}
-			.cover-background {
-				width: 100%;
-				height: 100vh;
-				position: fixed;
-
-				/*box-shadow: inset 0 -2px 3px rgba(0,0,0,0.5);*/
-
-				background: url('media/cover.jpg');
-				-webkit-filter: grayscale(0.5);
-				background-size: cover;
-			}
-			.Name h1 {
-
-				position: fixed;
-				bottom: 2vh;
-				right: 2vw;
-				z-index: 3;
-
-				color: white;
-				font-size: 4vmin;
-				line-height: 0;
-				text-transform: uppercase;
-				color: black;
-
-			}
-
-		/* List */
-
-			.Tree-container {
-
-				width: 100%;
-				position: absolute;
-
-				top: 0vh;
-
-				z-index: 2;
-
-
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9e9e9+0,e9e9e9+97&0+0,1+51 */
-				background: -moz-linear-gradient(top,  rgba(233,233,233,0) 0%, rgba(233,233,233,1) 51%, rgba(233,233,233,1) 97%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(top,  rgba(233,233,233,0) 0%,rgba(233,233,233,1) 51%,rgba(233,233,233,1) 97%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to bottom,  rgba(233,233,233,0) 0%,rgba(233,233,233,1) 51%,rgba(233,233,233,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e9e9e9', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-9 */
-
-			}
-			.Tree > ul {
-				background: rgba(233,233,233,0.9);
-				border-radius: 0vw;
-				margin-bottom: 10vw;
-				padding: 1vw;
-			}
-
-			.Tree > ul > li {
-				font-size: 5vmin;
-				font-weight: 700;
-				margin-top: 3vmin;
-				text-transform: uppercase;
-			}
-
-			.Tree > ul > li:first-child {
-				margin-top: 0vmin;
-			}
-
-
-				.Tree > ul > ul {
-					font-family: "Roboto", sans-serif;
-					/*padding-left: 0vmin;*/
-				}
-
-				.Tree > ul > ul > li {
-					font-size: 4vmin;
-					font-weight: 300;
-					/*text-transform: uppercase;*/
-					/*padding-left: 0;*/
-				}
-
-					.Tree > ul > ul > ul > li {
-						font-size: 3vmin;
-					}
-
-						.Tree > ul > ul > ul > ul > li {
-							font-size: 2.1vmin;
-						}
-
-	</style>
-
-	<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+	<!-- <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/kefir/3.2.0/kefir.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
 
 
 </head>
 <body>
+
 	<div class="cover">
 		<div class="cover-background"></div>
 	</div>
+
 	<div class="Name">
 		<h1>Rundberg 1</h1>
 	</div>
+
 	<div class="Tree-container">
 
-	<div class="Tree">
-		<ul>
-			<li>Links</li>
+		<div class="Tree">
 			<ul>
-				<li><a href="http://github.com/mayu">Mayu GitHub</a></li>
-				<li><a href="https://github.com/mayu/rundberg-1-firmware">Source Code: Firmware</a></li>
-				<li><a href="http://internal.mayustudios.com">Internal Site (this)</a></li>
-				<li><a href="https://medium.com/@mayu">Blog</a></li>
-				<li><a href="https://runberg1.slack.com">Slack (Chat)</a></li>
-			</ul>
-			<li>High Level Design</li>
+				<li>Links</li>
 				<ul>
-					<li>Business Goals [todo]</li>
-					<li>Design Values [todo]</li>
-					<li>Design Process [todo]</li>
+					<li><a href="http://github.com/mayu">Mayu GitHub</a></li>
+					<li><a href="https://github.com/mayu/rundberg-1-firmware">Source Code: Firmware</a></li>
+					<li><a href="http://internal.mayustudios.com">Internal Site (this)</a></li>
+					<li><a href="https://medium.com/@mayu">Blog</a></li>
+					<li><a href="https://runberg1.slack.com">Slack (Chat)</a></li>
 				</ul>
-			<li>Research</li>
-				<ul>
-					<li>User Personas</li>
-					<li>Market Analysis</li>
-					<li>Component Research</li>
+				<li>Logs</li>
+				<ul id="logs">
+				</ul>
+				<li>High Level Design</li>
 					<ul>
-						<li>Pressure Sensor Research</li>
-						<li>Force Feedback Research</li>
-						<li>Fabric Research</li>
+						<li>Business Goals [todo]</li>
+						<li>Design Values [todo]</li>
+						<li>Design Process [todo]</li>
 					</ul>
-				</ul>
-
-			<li>Supplies (TODO)</li>
-				<ul>
-					<li>Prototyping Suppllies</li>
-				</ul>
-
-			<li>Humans Resources (TODO)</li>
-				<ul>
-					<li>Humans Resources</li>
-				</ul>
-
-			<li>Learn</li>
-				<ul>
-					<li>Design</li>
-						<ul>
-							<li><a href="https://www.youtube.com/watch?v=XCsGLWrfE4Y">The Next Black - A Documentary on the Future of clothing</a></li>
-						</ul>
-					<li>Prototyping</li>
+				<li>Research</li>
 					<ul>
-						<li><a href="https://vimeo.com/156109694">How to Sew Sensors to Fabric</a></li>
+						<li>User Personas</li>
+						<li>Market Analysis</li>
+						<li>Component Research</li>
+						<ul>
+							<li>Pressure Sensor Research</li>
+							<li>Force Feedback Research</li>
+							<li>Fabric Research</li>
+						</ul>
+					</ul>
+
+				<li>Supplies (TODO)</li>
+					<ul>
+						<li>Prototyping Suppllies</li>
+					</ul>
+
+				<li>Humans Resources (TODO)</li>
+					<ul>
+						<li>Humans Resources</li>
+					</ul>
+
+				<li>Learn</li>
+					<ul>
+						<li>Design</li>
 							<ul>
-								<li><iframe src="https://player.vimeo.com/video/156109694" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+								<li><a href="https://www.youtube.com/watch?v=XCsGLWrfE4Y">The Next Black - A Documentary on the Future of clothing</a></li>
+							</ul>
+						<li>Prototyping</li>
+						<ul>
+							<li><a href="https://vimeo.com/156109694">How to Sew Sensors to Fabric</a></li>
+								<ul>
+									<li><iframe src="https://player.vimeo.com/video/156109694" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+								</ul>
+						</ul>
+						<li>Web Engineering &amp; Design</li>
+							<ul>
+								<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">CSS Cheatsheet</a></li>
 							</ul>
 					</ul>
-					<li>Web Engineering &amp; Design</li>
-						<ul>
-							<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">CSS Cheatsheet</a></li>
-						</ul>
-				</ul>
 
-		</ul>
+			</ul>
+
+		</div>
 	</div>
-	</div>
+
+	<script src="build/bundle.js">	</script>
+
 </body>
 </html>
