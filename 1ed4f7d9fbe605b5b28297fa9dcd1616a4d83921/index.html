@@ -48,19 +48,40 @@
       padding: 3vmin;
       max-width: 100vw;
       /*min-height: 10rem;*/
-      margin-right: 2vmin;
-      margin-left: 2vmin;
+      margin: 2vmin;
       position: relative;
     }
-    .TimelineEvent-intent {
+    .TimelineEvent-intent, .Legend-intent {
       box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.3);
       background: rgba(250, 250, 250, 0.7);
     }
-    .TimelineEvent-effort {
+    .TimelineEvent-effort, .Legend-effort {
       box-shadow: none;
       border-radius: 0.5rem;
       background: rgba(255, 255, 255, 0.5);
       color: rgba(0,0,0,0.5);
+    }
+    .Legend {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+      opacity: 0.7;
+      font-size: 0.7rem;
+      transition: all 0.3s ease;
+    }
+    .Legend:hover {
+      opacity: 1;
+      cursor: help;
+      background: #eae4e4;
+      font-size: 2rem;
+      /*transition: opacity 0.3s ease 0s;*/
+      /*transform: scale(1.5) translate(4vw, -1.5vh);*/
+    }
+    .Legend > div {
+      padding: 1vmin;
+      display: inline-block;
+      margin: 1vmin;
     }
     .TimelineEvent .title {
       font-size: 1.2rem;
