@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Timeline</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background: #eae4e4;
+      color: #504b68;
+      font-size: 16px;
+      font-size: 1rem;
+    }
+    .Years-container {
+      font-size: 5vmax;
+    }
+    .Months-container {
+      font-size: 4vmax;
+    }
+    .Days-container {
+      font-size: 3vmax;
+    }
+    .Day-Events-Container {
+      padding: 1vmin;
+    }
+    .Years-container > .title,
+    .Months-container > div > .title,
+    .Days-container > div > .title {
+      margin-bottom: 3vmin;
+      margin-top: 3vmin;
+      text-align: left;
+      max-width: 10vw;
+      font-weight: 300;
+      opacity: 0.6;
+      margin-left: 2vw;
+    }
+    .TimelineEvent {
+      list-style-type: none;
+      font-size: 1rem;
+      padding: 3vmin;
+      max-width: 100vw;
+      /*min-height: 10rem;*/
+      margin-right: 2vmin;
+      margin-left: 2vmin;
+      position: relative;
+    }
+    .TimelineEvent-intent {
+      box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.3);
+      background: rgba(250, 250, 250, 0.7);
+    }
+    .TimelineEvent-effort {
+      box-shadow: none;
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      color: rgba(0,0,0,0.5);
+    }
+    .TimelineEvent .title {
+      font-size: 1.2rem;
+      /*padding: 2rem;*/
+    }
+    .TimelineEvent .start,
+    .TimelineEvent .participants {
+      opacity: 0.6;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .TimelineEvent .description {
+      font-size: 0.8rem;
+      padding-left: 0.2vw;
+      margin-top: 2vh;
+      background: rgba(0, 0, 0, 0.02);
+      padding: 2vmin;
+      box-shadow: inset 0 0.2rem 0.3rem rgba(0,0,0,0.1);
+    }
+    .VideoUpdate {
+      position: fixed;
+      top: 2vmax;
+      right: 2vmax;
+      width: 20vmax;
+    }
+    .VideoUpdate-link {
+      position: relative;
+      display: block;
+    }
+    .VideoUpdate-title {
+      position: absolute;
+      top: 3vmax;
+      width: 100%;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 2vmax;
+      font-weight: bold;
+      z-index: 5
+    }
+    .VideoUpdate-thumbnail {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      /*box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.3);*/
+      /*z-index: 6*/
+      filter: brightness(0.5) drop-shadow(0 0.3rem 0.5rem rgba(0,0,0,0.4));
+    }
+    @media (min-width: 900px) {
+      .Years-container,
+      .Months-container,
+      .Days-container {
+        /*padding-left: 4vmin;*/
+      }
+      .TimelineContainer {
+        margin-left: 3vw;
+      }
+      .Day-Events-Container {
+        transform: translateY(-9vh);
+      }
+      .TimelineEvent-intent {
+        transform: translateX(12vw);
+      }
+      .TimelineEvent-effort {
+        transform: translateX(50vw);
+      }
+      .Years-container > .title,
+      .Months-container > div > .title,
+      .Days-container > div > .title {
+        text-align: right;
+        margin-left: 0;
+      }
+      .TimelineEvent {
+          max-width: 30vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Loading...</div>
+  <script src="bundle.js"></script>
+  <script>
+
+    function getNowDate() {
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+
+      var yyyy = today.getFullYear();
+      if(dd<10){
+          dd='0'+dd;
+      }
+      if(mm<10){
+          mm='0'+mm;
+      }
+      var today = yyyy + '-' + mm;
+      return today
+    }
+
+    var waitForApp = setInterval(function() {
+      var loaded = document.querySelectorAll('#years').length > 0;
+      if(loaded) {
+        clearInterval(waitForApp);
+        console.log(getNowDate());
+        location.hash = "#";
+        location.hash = "#" + getNowDate();
+      }
+    },100)
+  </script>
+</body>
+</html>
