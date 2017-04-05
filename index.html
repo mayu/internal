@@ -1,104 +1,139 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Internal | Mayu Studios</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
-
-	<!-- <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/kefir/3.2.0/kefir.min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Timeline</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background: #eae4e4;
+      color: #504b68;
+      font-size: 16px;
+      font-size: 1rem;
+    }
+    .Years-container {
+      font-size: 5vmax;
+    }
+    .Months-container {
+      font-size: 4vmax;
+    }
+    .Days-container {
+      font-size: 3vmax;
+    }
+    .Day-Events-Container {
+      padding: 1vmin;
+    }
+    .Years-container > .title,
+    .Months-container > div > .title,
+    .Days-container > div > .title {
+      margin-bottom: 3vmin;
+      margin-top: 3vmin;
+      text-align: left;
+      max-width: 10vw;
+      font-weight: 300;
+      opacity: 0.6;
+      margin-left: 2vw;
+    }
+    .TimelineEvent {
+      list-style-type: none;
+      font-size: 1rem;
+      padding: 3vmin;
+      max-width: 100vw;
+      /*min-height: 10rem;*/
+      margin-right: 2vmin;
+      margin-left: 2vmin;
+      position: relative;
+    }
+    .TimelineEvent-intent {
+      box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.3);
+      background: rgba(250, 250, 250, 0.7);
+    }
+    .TimelineEvent-effort {
+      box-shadow: none;
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      color: rgba(0,0,0,0.5);
+    }
+    .TimelineEvent .title {
+      font-size: 1.2rem;
+      /*padding: 2rem;*/
+    }
+    .TimelineEvent .start,
+    .TimelineEvent .participants {
+      opacity: 0.6;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .VideoUpdate {
+      position: fixed;
+      top: 2vmax;
+      right: 2vmax;
+      width: 20vmax;
+    }
+    .VideoUpdate-link {
+      position: relative;
+      display: block;
+    }
+    .VideoUpdate-title {
+      position: absolute;
+      top: 3vmax;
+      width: 100%;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 2vmax;
+      font-weight: bold;
+      z-index: 5
+    }
+    .VideoUpdate-thumbnail {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      /*box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.3);*/
+      /*z-index: 6*/
+      filter: brightness(0.9) blur(1px) drop-shadow(0 0.2rem 0.3rem rgba(0,0,0,0.6));
+    }
+    @media (min-width: 900px) {
+      .Years-container,
+      .Months-container,
+      .Days-container {
+        /*padding-left: 4vmin;*/
+      }
+      .TimelineContainer {
+        margin-left: 3vw;
+      }
+      .Day-Events-Container {
+        transform: translateY(-9vh);
+      }
+      .TimelineEvent-intent {
+        transform: translateX(12vw);
+      }
+      .TimelineEvent-effort {
+        transform: translateX(50vw);
+      }
+      .Years-container > .title,
+      .Months-container > div > .title,
+      .Days-container > div > .title {
+        text-align: right;
+        margin-left: 0;
+      }
+      .TimelineEvent {
+          max-width: 30vw;
+      }
+    }
+  </style>
 </head>
 <body>
-
-	<div class="cover">
-		<div class="cover-background"></div>
-	</div>
-
-	<div class="Name">
-		<h1>Rundberg 1</h1>
-	</div>
-
-	<div class="Tree-container">
-
-		<div class="Tree">
-			<ul>
-			  <li><iframe src="https://morning-mountain-66923.herokuapp.com/TodoMVC#" style="
-			    width: 100%;
-			    border: none;
-			    height: 50vh;
-			"></iframe></li>
-			</ul>
-			<ul>
-				<li>Links</li>
-				<ul>
-					<li><a href="http://github.com/mayu">Mayu GitHub</a></li>
-					<li><a href="https://github.com/mayu/rundberg-1-firmware">Source Code: Firmware</a></li>
-					<li><a href="http://internal.mayustudios.com">Internal Site (this)</a></li>
-					<li><a href="https://medium.com/@mayu">Blog</a></li>
-					<li><a href="https://runberg1.slack.com">Slack (Chat)</a></li>
-				</ul>
-				<li>Logs</li>
-				<ul id="logs">
-				</ul>
-				<li>High Level Design</li>
-					<ul>
-						<li>Business Goals [todo]</li>
-						<li>Design Values [todo]</li>
-						<li>Design Process [todo]</li>
-					</ul>
-				<li>Research</li>
-					<ul>
-						<li>User Personas</li>
-						<li>Market Analysis</li>
-						<li>Component Research</li>
-						<ul>
-							<li>Pressure Sensor Research</li>
-							<li>Force Feedback Research</li>
-							<li>Fabric Research</li>
-						</ul>
-					</ul>
-
-				<li>Supplies (TODO)</li>
-					<ul>
-						<li>Prototyping Suppllies</li>
-					</ul>
-
-				<li>Humans Resources (TODO)</li>
-					<ul>
-						<li>Humans Resources</li>
-					</ul>
-
-				<li>Learn</li>
-					<ul>
-						<li>Design</li>
-							<ul>
-								<li><a href="https://www.youtube.com/watch?v=XCsGLWrfE4Y">The Next Black - A Documentary on the Future of clothing</a></li>
-							</ul>
-						<li>Prototyping</li>
-						<ul>
-							<li><a href="https://vimeo.com/156109694">How to Sew Sensors to Fabric</a></li>
-								<ul>
-									<li><iframe src="https://player.vimeo.com/video/156109694" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
-								</ul>
-						</ul>
-						<li>Web Engineering &amp; Design</li>
-							<ul>
-								<li><a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">CSS Cheatsheet</a></li>
-							</ul>
-					</ul>
-
-			</ul>
-
-		</div>
-	</div>
-
-	<script src="build/bundle.js">	</script>
-
+  <div id="app"></div>
+  <script src="bundle.js"></script>
 </body>
 </html>
