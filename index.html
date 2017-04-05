@@ -72,6 +72,14 @@
       text-transform: uppercase;
       font-size: 0.9rem;
     }
+    .TimelineEvent .description {
+      font-size: 0.8rem;
+      padding-left: 0.2vw;
+      margin-top: 2vh;
+      background: rgba(0, 0, 0, 0.02);
+      padding: 2vmin;
+      box-shadow: inset 0 0.2rem 0.3rem rgba(0,0,0,0.1);
+    }
     .VideoUpdate {
       position: fixed;
       top: 2vmax;
@@ -100,7 +108,7 @@
       width: 100%;
       /*box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.3);*/
       /*z-index: 6*/
-      filter: brightness(0.9) blur(1px) drop-shadow(0 0.2rem 0.3rem rgba(0,0,0,0.6));
+      filter: brightness(0.5) drop-shadow(0 0.3rem 0.5rem rgba(0,0,0,0.4));
     }
     @media (min-width: 900px) {
       .Years-container,
@@ -133,7 +141,35 @@
   </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">Loading...</div>
   <script src="bundle.js"></script>
+  <script>
+
+    function getNowDate() {
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+
+      var yyyy = today.getFullYear();
+      if(dd<10){
+          dd='0'+dd;
+      }
+      if(mm<10){
+          mm='0'+mm;
+      }
+      var today = yyyy + '-' + mm;
+      return today
+    }
+
+    var waitForApp = setInterval(function() {
+      var loaded = document.querySelectorAll('#years').length > 0;
+      if(loaded) {
+        clearInterval(waitForApp);
+        console.log(getNowDate());
+        location.hash = "#";
+        location.hash = "#" + getNowDate();
+      }
+    },100)
+  </script>
 </body>
 </html>
